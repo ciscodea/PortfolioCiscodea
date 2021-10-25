@@ -1,14 +1,32 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 {% block content %}
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
-        {% for skill in skills %}
-            <div class="w-auto h-auto">
-                <div>
-                    <img src="{{ skill.icon.url }}" alt="{{ skill.name }}">
+    <section id="home" class="md:flex p-8 md:p-0">
+        <div class="2xl:mx-80 pt-6 md:p-8 md:text-left space-y">
+            <h1 class="font-mono text-green-200">Hi, my name is</h1>
+            <h2 class="font-mono text-4xl text-green-700">Pedro López</h2>
+            <h3 class="font-mono text-4xl text-green-600">I build software for the web</h3>
+            <p class="text-justify text-lg font-mono leading-loose text-white">
+                I am a software engineer from Mexico specializing in backend web development.
+                currently I am focused in build Api's with Django Framework.
+                And learning about creating software infrastructure.
+            </p>
+        </div>
+    </section>
+    <section id="skills">
+        <h1 class="font-mono text-blue-400 md:text-xl text-center">here's a few technologies that I have been working recently.</h1>
+        <div class="xl:mx-80 grid grid-cols-2 md:grid-cols-3 gap-4 justify-items-center">
+            {% for skill in skills %}
+                <div class="w-auto h-auto p-8">
+                    <img class="h-10 w-10" src="{{ skill.icon.url }}" alt="{{ skill.name }}">
                 </div>
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="projects">
+        <h1 class="font-mono text-blue-400 text-3xl text-center">Proyectos</h1>
+    <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto md:m-2" src="{% static 'img/profile/BATMAN_GOPHER.png' %}" alt="pedro-photo">
+    </section>
 {% endblock %}

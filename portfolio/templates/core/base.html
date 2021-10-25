@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<body style="background-color: #0a192f">
 {% block navbar %}{% include 'core/nav.html' %}{% endblock %}
 <div class="md:container md:mx-auto p-8 shadow-lg">{% block content %}{% endblock %}</div>
 
